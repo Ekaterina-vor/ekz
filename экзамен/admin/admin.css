@@ -1,0 +1,129 @@
+:root {
+    --dark-brown: #4a2b2b;
+    --medium-brown: #8b4545;
+    --light-pink: #e7c0c0;
+    --pink: #c17777;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--pink);
+}
+
+.header {
+    background-color: var(--dark-brown);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    padding: 8px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--medium-brown);
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    background-color: var(--pink);
+}
+
+.logout-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.page-title {
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стили для страницы сотрудников */
+.employee-card {
+    background-color: var(--dark-brown);
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.employee-actions {
+    text-align: right;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--light-pink);
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+/* Стили для страницы смен */
+.shifts-table {
+    width: 100%;
+    background-color: var(--dark-brown);
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.shifts-table th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--pink);
+}
+
+.assign-btn {
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Стили для страницы заказов */
+.orders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.order-card {
+    background-color: var(--dark-brown);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.filter-dropdown {
+    background-color: var(--dark-brown);
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+} 

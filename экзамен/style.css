@@ -1,0 +1,681 @@
+:root {
+    --dark-brown: #4a2b2b;
+    --medium-brown: #8b4545;
+    --light-pink: #e7c0c0;
+    --pink: #c17777;
+    --green: #458b45;
+    --red: #8b4545;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--pink);
+}
+
+.header {
+    background-color: var(--dark-brown);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    padding: 8px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--medium-brown);
+    border-radius: 4px;
+    text-transform: lowercase;
+}
+
+.nav-link.active {
+    background-color: var(--pink);
+}
+
+.logout-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: lowercase;
+}
+
+.content {
+    padding: 20px;
+}
+
+.page-title {
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стили для страницы сотрудников */
+.employee-card {
+    background-color: var(--dark-brown);
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.employee-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--light-pink);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.action-btn:hover {
+    color: white;
+}
+
+.cancel-btn {
+    display: inline-block;
+    background-color: var(--medium-brown);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cancel-btn:hover {
+    background-color: var(--red);
+}
+
+/* Стили для страницы смен */
+.shifts-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.assign-shift-form {
+    background-color: var(--dark-brown);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    height: fit-content;
+}
+
+.assign-shift-form h3 {
+    margin: 0 0 20px 0;
+    color: var(--light-pink);
+    font-size: 18px;
+}
+
+.shift-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: var(--light-pink);
+}
+
+.shift-select, .shift-input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+}
+
+.shift-submit {
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.shift-submit:hover {
+    background-color: #d9aeae;
+}
+
+.shifts-schedule {
+    background-color: var(--dark-brown);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.shifts-schedule h3 {
+    margin: 0 0 20px 0;
+    color: var(--light-pink);
+    font-size: 18px;
+}
+
+.shift-day {
+    border-bottom: 1px solid var(--pink);
+    padding: 15px 0;
+}
+
+.shift-day:last-child {
+    border-bottom: none;
+}
+
+.shift-day h4 {
+    margin: 0 0 10px 0;
+    color: var(--light-pink);
+    font-size: 16px;
+}
+
+.shift-types {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.shift-type h5 {
+    margin: 0 0 10px 0;
+    color: var(--light-pink);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.shift-employees {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.shift-employee {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--medium-brown);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.employee-name {
+    color: white;
+}
+
+.delete-shift {
+    background: none;
+    border: none;
+    color: var(--light-pink);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.delete-shift:hover {
+    color: white;
+}
+
+.no-shifts {
+    color: var(--pink);
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+}
+
+.delete-shift-form {
+    margin: 0;
+}
+
+/* Стили для страницы заказов */
+.orders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.order-card {
+    background-color: var(--dark-brown);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.order-card h3 {
+    margin: 0 0 15px 0;
+    color: var(--light-pink);
+}
+
+.order-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Стили для фильтрации */
+.filter-container {
+    background-color: var(--dark-brown);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.filter-title:after {
+    content: '▼';
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.filter-content {
+    display: none;
+    padding-top: 15px;
+}
+
+.filter-content.active {
+    display: block;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-section {
+    border-top: 1px solid var(--pink);
+    padding-top: 15px;
+}
+
+.filter-section h3 {
+    color: var(--light-pink);
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.date-input {
+    flex: 1;
+}
+
+.date-input input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+}
+
+.filter-select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    cursor: pointer;
+}
+
+.filter-select option {
+    padding: 8px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-submit, .filter-reset {
+    flex: 1;
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.filter-reset {
+    background-color: var(--medium-brown);
+    color: white;
+}
+
+.filter-submit:hover {
+    background-color: #d9aeae;
+}
+
+.filter-reset:hover {
+    background-color: var(--red);
+}
+
+/* Стили для страницы повара */
+.ready-form {
+    margin-top: 15px;
+}
+
+.ready-toggle {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.ready-toggle.ready {
+    background-color: var(--green);
+}
+
+.ready-toggle.not-ready {
+    background-color: var(--red);
+}
+
+/* Стили для страницы официанта */
+.header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.create-order-btn {
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-btn {
+    color: var(--light-pink);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.status-form {
+    margin-top: 15px;
+}
+
+.status-select {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.create-order-form {
+    background-color: var(--dark-brown);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.order-item {
+    background-color: var(--medium-brown);
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+    position: relative;
+}
+
+.order-item .form-group {
+    margin: 0;
+}
+
+.add-item-btn {
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.add-item-btn:hover {
+    background-color: #d9aeae;
+}
+
+.remove-item-btn {
+    background-color: var(--red);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.remove-item-btn:hover {
+    background-color: #a13d3d;
+}
+
+#orderItems h3 {
+    color: var(--light-pink);
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.error-message {
+    background-color: var(--red);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--dark-brown);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.modal-content h3 {
+    color: var(--light-pink);
+    margin: 0 0 20px 0;
+    font-size: 18px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.shift-cancel {
+    background-color: var(--medium-brown);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    flex: 1;
+}
+
+.shift-cancel:hover {
+    background-color: var(--red);
+}
+
+/* Обновленные стили для таблицы смен */
+.shifts-table {
+    background-color: var(--dark-brown);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.shifts-table table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+.shifts-table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--pink);
+    color: var(--light-pink);
+    font-weight: 500;
+}
+
+.shifts-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--medium-brown);
+}
+
+.shifts-table tr:last-child td {
+    border-bottom: none;
+}
+
+.assign-btn {
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.assign-btn:hover {
+    background-color: #d9aeae;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--light-pink);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.action-btn:hover {
+    color: white;
+}
+
+/* Стили для формы добавления сотрудника */
+.add-employee-form {
+    background-color: var(--dark-brown);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px auto 0;
+    color: white;
+    max-width: 50%;
+    width: 100%;
+}
+
+.add-employee-form h3 {
+    color: var(--light-pink);
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.employee-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--light-pink);
+    color: var(--dark-brown);
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--pink);
+}
